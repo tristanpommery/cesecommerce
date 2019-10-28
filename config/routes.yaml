@@ -41,3 +41,22 @@ adminAdd:
   controller: App\Controller\AdminController::add
 
 #######################################################
+
+##############Routes for the products page#############
+productsInformatics:
+  path: /products/informatics
+  controller: App\Controller\ProductsController::informatics
+
+productsConnectors:
+  path: /products/connectors
+  controller: App\Controller\ProductsController::connectors
+
+productsSound:
+  path: /products/hifi
+  controller: App\Controller\ProductsController::sound
+
+productsCommunication:
+  path: /products/communication
+  controller: App\Controller\ProductsController::communication
+
+  #######################################################

@@ -7,13 +7,19 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class ProductsController extends AbstractController
 {
-    /**
-     * @Route("/products", name="products")
-     */
-    public function index()
-    {
-        return $this->render('products/index.html.twig', [
-            'controller_name' => 'ProductsController',
-        ]);
+    public function informatics() {
+        return $this->render('products/informatics.html.twig');
+    }
+
+    public function communication() {
+        return $this->render('products/communication.html.twig');
+    }
+
+    public function sound(){
+        return $this->render('products/sound.html.twig');
+    }
+
+    public function connectors(){
+        return $this->render('products/connectors.html.twig');
     }
 }
