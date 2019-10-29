@@ -5,6 +5,22 @@
 {% endblock %}
 
 {% block body %}
-{{ include('main/front_templates/product-card.html.twig') }}
-{% endblock %}
 
+
+        <div class="row">
+
+
+    {% for subcategory in subcategories | filter(subcategory => subcategory.category.id == 1 ) %}
+        <div class="column">
+            <div class="card">
+                <img class="card-img" src="https://viaplaceholder.com/150.png" alt="CardImage">
+                <div class="container">
+                    <p class="subcategory-name">{{ subcategory.name }}</p>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+        </div>
+
+
+{% endblock %}

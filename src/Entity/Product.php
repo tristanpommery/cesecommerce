@@ -59,6 +59,17 @@ class Product
      */
     private $usage_type;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $imageLink;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\SubCategory", inversedBy="article")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $subCategory;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -156,6 +167,30 @@ class Product
     public function setUsageType(?Usage $usage_type): self
     {
         $this->usage_type = $usage_type;
+
+        return $this;
+    }
+
+    public function getImageLink(): ?string
+    {
+        return $this->imageLink;
+    }
+
+    public function setImageLink(string $imageLink): self
+    {
+        $this->imageLink = $imageLink;
+
+        return $this;
+    }
+
+    public function getSubCategory(): ?SubCategory
+    {
+        return $this->subCategory;
+    }
+
+    public function setSubCategory(?SubCategory $subCategory): self
+    {
+        $this->subCategory = $subCategory;
 
         return $this;
     }

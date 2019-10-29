@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\SubCategory;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -11,6 +12,10 @@ class MainController extends AbstractController
 
     public function home()
     {
+
+
+
+
         return $this->render('main/index.html.twig');
     }
 
