@@ -60,3 +60,18 @@ productsCommunication:
   controller: App\Controller\ProductsController::communication
 
   #######################################################
+
+
+########Routes for the login / registration and logout#######
+
+security_login:
+  path: /login
+  controller: App\Controller\SecurityController::login
+
+security_logout:
+  path: /logout
+  methods: GET
+
+security_register:
+  path: /regsiter
+  controller: App\Controller\SecurityController::register

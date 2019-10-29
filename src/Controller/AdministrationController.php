@@ -10,6 +10,7 @@ class AdministrationController extends AbstractController
 
     public function adminIndex()
     {
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         return $this->render('administration/index.html.twig');
     }
     public function edit()
