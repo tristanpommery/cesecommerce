@@ -1,7 +1,15 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Home - Cesecommerce{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/css/carousel.css') }}">
+{% endblock %}
+
 
 {% block body %}
+{{ include('main/front_templates/carousel.html.twig') }}
     <h1>Welcome to Ces'ecommerce</h1>
+    {%  block javascripts %}
+        <script src="{{ asset('assets/js/carousel.js') }}"
+    {% endblock %}
 {% endblock %}

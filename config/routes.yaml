@@ -73,5 +73,9 @@ security_logout:
   methods: GET
 
 security_register:
-  path: /regsiter
+  path: /register
   controller: App\Controller\SecurityController::register
+
+user_profile:
+  path: /profile
+  controller: App\Controller\AuthController::profile

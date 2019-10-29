@@ -8,8 +8,10 @@ use Symfony\Component\Routing\Annotation\Route;
 class AuthController extends AbstractController
 {
 
-    public function index()
+    public function profile()
     {
-
+        return $this->render('auth/profile.html.twig',[
+            'user' => $this->getUser()
+            ]);
     }
 }
