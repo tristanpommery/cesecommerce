@@ -10,9 +10,6 @@ about:
   path: /about
   controller: App\Controller\MainController::about
 
-products:
-  path: /products
-  controller: App\Controller\MainController::products
 
 discount:
   path: /discount
@@ -42,25 +39,6 @@ adminAdd:
 
 #######################################################
 
-##############Routes for the products page#############
-productsInformatics:
-  path: /products/informatics
-  controller: App\Controller\ProductsController::informatics
-
-productsConnectors:
-  path: /products/connectors
-  controller: App\Controller\ProductsController::connectors
-
-productsSound:
-  path: /products/hifi
-  controller: App\Controller\ProductsController::sound
-
-productsCommunication:
-  path: /products/communication
-  controller: App\Controller\ProductsController::communication
-
-  #######################################################
-
 
 ########Routes for the login / registration and logout#######
 
@@ -79,3 +57,17 @@ security_register:
 user_profile:
   path: /profile
   controller: App\Controller\AuthController::profile
+
+#########Subcategories routes (IT)###############################
+
+categories:
+  path: /products
+  controller: App\Controller\ProductsController::category
+
+subcategories:
+  path: /products/{name}
+  controller: App\Controller\ProductsController::subcategory
+
+items:
+  path: /products/{category}/{name}
+  controller: App\Controller\ProductsController::items

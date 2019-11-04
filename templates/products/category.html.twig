@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/css/cards.css') }}">
+{% endblock %}
+
+{% block body %}
+
+
+    <div class="row">
+
+
+        {% for category in categories %}
+            <a href="{{ path('subcategories', { 'name' : category.name }) }}">
+            <div class="column">
+                    <div class="card">
+                        <img class="card-img" src="https://viaplaceholder.com/150.png" alt="CardImage">
+                        <div class="container">
+                            <p class="subcategory-name">{{ category.name }}</p>
+                        </div>
+                    </div>
+            </div>
+            </a>
+        {% endfor %}
+    </div>
+
+
+{% endblock %}

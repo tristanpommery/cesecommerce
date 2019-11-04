@@ -2,31 +2,38 @@
 
 namespace App\Controller;
 
+use App\Entity\Category;
+use App\Entity\Product;
 use App\Entity\SubCategory;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
 class ProductsController extends AbstractController
 {
-    public function informatics() {
+    public function category() {
 
-        $repo = $this->getDoctrine()->getRepository(SubCategory::class);
-        $subcategory = $repo->findAll();
+        $repo = $this->getDoctrine()->getRepository(Category::class);
+        $category = $repo->findAll();
 
-        return $this->render('products/informatics.html.twig', [
-            'subcategories' => $subcategory
+        return $this->render('products/category.html.twig', [
+            'categories' => $category
         ]);
     }
 
-    public function communication() {
-        return $this->render('products/communication.html.twig');
+    public function subcategory(Category $category)
+    {
+
+        return $this->render('products/subcategory.html.twig', [
+            'category' => $category
+        ]);
+
     }
 
-    public function sound(){
-        return $this->render('products/sound.html.twig');
+    public function items(SubCategory $subCategory)
+    {
+        return $this->render('products/items.html.twig', [
+            'subcategory' => $subCategory
+        ]);
     }
 
-    public function connectors(){
-        return $this->render('products/connectors.html.twig');
-    }
 }
